@@ -9004,8 +9004,7 @@ const issues = [
 let issuesWithUpdatedApiUrl = JSON.parse(JSON.stringify(issues));
 
 issuesWithUpdatedApiUrl.map(function(issue){
-  //issue.url = `api-v2.github.com${issue.url.slice(22, -1)}`;
-  issue.url.replace('api.github.com','api-v2.github.com');
+  issue.url = `api-v2.github.com${issue.url.slice(22, -1)}`;
 })
 
 let commentCountAcrossIssues = 0;
@@ -9029,7 +9028,6 @@ issues.map((issue) => {
     nonAutomaticIssues.push(issue);
   }
 })
-
 
 const tbody = document.getElementById('results');
 tbody.innerHTML = nonAutomaticIssues.map(issue => 
