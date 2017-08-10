@@ -9004,7 +9004,8 @@ const issues = [
 let issuesWithUpdatedApiUrl = JSON.parse(JSON.stringify(issues));
 
 issuesWithUpdatedApiUrl.map(function(issue){
-  issue.url = `api-v2.github.com${issue.url.slice(22, -1)}`;
+  //issue.url = `api-v2.github.com${issue.url.slice(22, -1)}`;
+  issue.url.replace('api.github.com','api-v2.github.com');
 })
 
 let commentCountAcrossIssues = 0;
@@ -9037,8 +9038,7 @@ tbody.innerHTML = nonAutomaticIssues.map(issue =>
     <td>${issue.created_at}</td>
     <td>${issue.state}</td>
    </tr>`
-  )
-  .join('');
+).join('');
 
 
 
